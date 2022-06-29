@@ -1,0 +1,21 @@
+<button (click)="initNewSong()" >Add a song</button>
+
+<table>
+  <thead>
+    <th>Song name</th>
+    <th>Artist name</th>
+    <th>Rating</th>
+    <th>Favortie status</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let song of songs">
+      <td> {{song.songName}} </td>
+      <td> {{song.artistName}} </td>
+      <td> {{song.songRating}} </td>
+      <td> {{song.isFavorite}} </td>
+      <td> <button (click)="editSong(song)" >Edit</button> </td>
+    </tr>
+  </tbody>
+</table>
+
+<app-edit-song [song]="songToEdit" (songsUpdated)="updatedSongList($event)"> </app-edit-song>

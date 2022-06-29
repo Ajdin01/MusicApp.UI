@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
-import { Song } from './models/song';
-import { SongService } from './services/song.service';
+import { Component, OnInit } from '@angular/core';
+import { Song } from 'src/app/models/song';
+import { SongService } from 'src/app/services/song.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-song-dashboard',
+  templateUrl: './song-dashboard.component.html',
+  styleUrls: ['./song-dashboard.component.css']
 })
-export class AppComponent {
+export class SongDashboardComponent implements OnInit {
   title = 'MusicApp.UI';
 
   songs: Song[] = [];

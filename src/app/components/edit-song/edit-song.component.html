@@ -1,0 +1,18 @@
+<div *ngIf="song">
+<h2>{{song.songName}}</h2>
+<div>
+    Song name:
+    <input [(ngModel)]="song.songName" type="text" name="songName" placeholder="song name">
+</div>
+<div>
+    Artist name:
+    <input [(ngModel)]="song.artistName" type="text" name="artistName" placeholder="artis">
+</div>
+<div>
+    Rating:
+    <input [(ngModel)]="song.songRating" type="range" min="1" max="5" name="songRating" placeholder="rating">
+</div>
+<button (click)="updateSong(song)" *ngIf="song.songID">Save</button>
+<button (click)="deleteSong(song)" *ngIf="song.songID">Delete</button>
+<button (click)="createSong(song)" *ngIf="!song.songID">Create</button>
+</div>
